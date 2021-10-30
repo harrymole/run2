@@ -246,7 +246,9 @@
         <img src="images/绿码.jpg" alt="">
     </div>
     <div class="zhuangtai">状态</div>
-    <div class="yunxvruxiao">允许入校</div>
+    <div class="yunxvruxiao">
+        <p id="t">允许入校</p>
+    </div>
     <div class="xuegonghao">学工号</div>
     <div class="xuehao">2018212832</div>
     <div class="churuxiaoshijian">出入校时间</div>
@@ -270,10 +272,23 @@
             return year + '-' + month + '-' + dates + ' ' + ' ' + h + ':' + m + ':' + s;
         }
         timer.innerText = getTimer();
+        
+        var i=0;
+        function clic(id){
+            i=i+id;
+            if(i%2==0){
+                document.getElementById("t").innerHTML= "允许入校";
+                new_Quiz();
+            }
+            else{
+                document.getElementById("t").innerHTML= "允许出校";
+            }
+        }
+        
     </script>
     <div style="height: 10px;"></div>
     <div class="gengduo">
-        <button>更多</button>
+        <button id="1" onclick="clic(this.id)" >更多</button>
     </div>
 </body>
 
